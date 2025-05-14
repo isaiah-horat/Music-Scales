@@ -24,18 +24,10 @@ class Scale():
         new_note_list = list(note_positions[start:] + note_positions[:end])
         self.note_pointer = 0
         for step in self.steps:
-            try:
-                self.notes.append(new_note_list[self.note_pointer])
-                self.next_step = self.steps[self.counter]
-                self.note_pointer += self.next_step
-                self.counter += 1
-            except:
-                self.notes.append(new_note_list[self.note_pointer])
-                self.next_step = self.steps[self.counter]
-                self.note_pointer += self.next_step
-                self.counter += 1
-            finally:
-                pass
+            self.notes.append(new_note_list[self.note_pointer])
+            self.next_step = self.steps[self.counter]
+            self.note_pointer += self.next_step
+            self.counter += 1
         return self.notes
 
 
